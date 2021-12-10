@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2</title>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.box {
+  border: 2px solid rgb(105, 172, 194);
+}
+
+.task2_1 {
+  height: 40px;
+  width: fit-content;
+
+  margin-bottom: 100px;
+
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+
+.task2_1 .item {
+  padding: 0 20px;
+}
+
+@media (max-width: 375px) {
+  .task2_1 {
+    flex-direction: column;
+    height: fit-content;
+  }
+  
+  .task2_1 .item {
+    padding: 8px 20px;
+  }
+}
+
+.task2_2 {
+  margin-bottom: 100px;
+}
+
+.task2_2 .box {
+  padding: 10px;
+  
+  text-align: center;
+}
+
+.task2_2 .A {
+  margin-bottom: 5px;
+}
+
+.task2_2 .flex {
+  margin-bottom: 5px;
+  display: flex;
+  gap: 5px;
+}
+
+.task2_2 .B, .task2_2 .D {
+  flex-grow: 2;
+}
+
+.task2_2 .C, .task2_2 .E {
+  flex-grow: 1;
+}
+
+@media (max-width: 375px) {
+  .task2_2 .B, .task2_2 .E, .task2_2 .C, .task2_2 .D {
+    flex-grow: 1;
+  }
+
+  .col {
+    flex-direction: column;
+  }
+}
+
+.task2_3 {
+  margin: 0 auto;
+
+  max-width: 700px;
+}
+
+.task2_3 .header {
+  min-height: 50px;
+
+  padding: 20px 15px;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.task2_3 .menu {
+  display: flex;
+  gap: 15px;
+}
+
+.task2_3 .content {
+  margin: 20px 0 10px;
+
+  height: 300px;
+
+  text-align: center;
+}
+
+.task2_3 .button {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .task2_3 .menu {
+    display: none;
+    gap: 15px;
+  }
+
+  .task2_3 .menu.visible {
+    display: block;
+    width: 100%;
+
+    position: absolute;
+    top: 50px;
+    left: 0;
+
+    text-align: center;
+
+    background-color: #fff;
+  }
+
+  .task2_3 .button {
+    display: block;
+
+    cursor: pointer;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="task2_1 box">
+    <div class="item">Home</div>
+    <div class="item">About</div>
+    <div class="item">Services</div>
+    <div class="item">Contacts</div>
+  </div>
+
+  <div class="task2_2">
+    <div class="box A">A</div>
+    <div class="flex col">
+      <div class="box B">B</div>
+      <div class="box E">E</div>
+    </div>
+    <div class="flex">
+      <div class="box C">C</div>
+      <div class="box D">D</div>
+    </div>
+  </div>
+
+  <div class="task2_3 box">
+    <div class="header">
+      <div class="logo">Logo</div>
+      <div class="button" id="button">☰</div>
+      <div class="menu" id="menu">
+        <div>Home</div>
+        <div>About</div>
+        <div>Services</div>
+        <div>Contacts</div>
+      </div>
+    </div>
+    <div class="content">Content</div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

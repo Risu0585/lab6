@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1</title>
+  <style>
+.box {
+  border: 1.5px solid red;
+}
+
+.task1_1 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 5px;
+  
+  margin-bottom: 100px;
+}
+
+@media (max-width: 375px) {
+  .task1_1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+.task1_1 .box {
+  height: 100px;
+  text-align: center;
+}
+
+.task1_2 {
+  height: 200px;
+
+  margin-bottom: 100px;
+
+  display: grid;
+  grid-gap: 5px;
+  grid-template-areas: "A A A"
+                       "B B E"
+                       "C D E";
+}
+
+@media (max-width: 375px) {
+  .task1_2 {
+    grid-template-areas: "A A"
+                         "B B"
+                         "B B"
+                         "C D"
+                         "E E";
+  }
+}
+
+.task1_2 .A {
+  grid-area: A;
+}
+.task1_2 .B {
+  grid-area: B;
+}
+.task1_2 .C {
+  grid-area: C;
+}
+.task1_2 .D {
+  grid-area: D;
+}
+.task1_2 .E {
+  grid-area: E;
+}
+
+.task1_3 {
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 200px auto 200px;
+  grid-template-rows: 50px 50px auto 50px;
+  grid-gap: 5px;
+}
+
+.task1_3 header {
+  grid-column: 1 / 4;
+}
+
+.task1_3 .sidebar {
+  grid-row: 2 / 4;
+}
+
+.task1_3 .ads {
+  grid-row: 2 / 4;
+  grid-column: 3;
+}
+
+.task1_3 footer {
+  grid-column: 1 / 4;
+}
+
+@media (max-width: 750px) {
+  .task1_3 nav {
+    grid-column: 1 / 4;
+  }
+
+  .task1_3 .sidebar {
+    grid-row: 3;
+  }
+
+  .task1_3 main {
+    grid-column: 2 / 4;
+  }
+
+  .task1_3 .ads {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .task1_3 footer {
+    grid-column: 2 / 4;
+  }
+}
+
+@media (max-width: 375px) {
+  .task1_3 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 50px auto 50px 50px 50px;
+    grid-gap: 5px;
+  }
+
+  .task1_3 header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .task1_3 nav {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .task1_3 main {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .task1_3 .sidebar {
+    grid-column: 1;
+    grid-row: 4;
+  }
+
+  .task1_3 .ads {
+    grid-column: 1;
+    grid-row: 5;
+  }
+
+  .task1_3 footer {
+    grid-column: 1;
+    grid-row: 6;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div class="task1_1">
+    <div class="box">Left</div>
+    <div class="box">Right</div>
+  </div>
+
+  <div class="task1_2">
+    <div class="box A">A</div>
+    <div class="box B">B</div>
+    <div class="box C">C</div>
+    <div class="box D">D</div>
+    <div class="box E">E</div>
+  </div>
+
+  <div class="task1_3">
+    <header class="box">header</header>
+    <aside class="box sidebar">sidebar</aside>
+    <nav class="box">navigation</nav>
+    <main class="box">main</main>
+    <aside class="box ads">ads</aside>
+    <footer class="box">footer</footer>
+  </div>
+</body>
+</html>
